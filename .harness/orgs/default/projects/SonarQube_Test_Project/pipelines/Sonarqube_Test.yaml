@@ -42,3 +42,9 @@ pipeline:
                         -Dsonar.sources=. \
                         -Dsonar.host.url=<+secrets.getValue("sonarqube_url")> \
                         -Dsonar.login=sqp_4701ae911823832500337f7290f45f173d610946
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: MarkAsFailure
